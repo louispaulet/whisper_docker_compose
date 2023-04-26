@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  jupyter:
+    build: .
+    image: speech_reco_french:latest
+    environment:
+      JUPYTER_TOKEN: "docker"
+    ports:
+      - 8888:8888
+    volumes:
+      - ./project:/app
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
