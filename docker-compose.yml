@@ -3,7 +3,7 @@ version: '3.9'
 services:
   jupyter:
     build: .
-    image: speech_reco_french:latest
+    image: whisper_docker_compose:latest
     environment:
       JUPYTER_TOKEN: "docker"
     ports:
